@@ -1,0 +1,23 @@
+#Creates variables "number" and "total", sets both to begin at 0
+number = 0
+total = 0.0
+
+while True:
+    value = input('Enter a Number: ')
+    #If the user enters 'done', exits the loop
+    if value == 'done':
+        break
+    #Converts the user input string to a float number or gives an error
+    try:
+        float_value = float(value)
+    except: 
+        print('Invalid Input')
+        continue
+    #Counts how many numbers were entered by adding 1 each iteration
+    number = number + 1
+    #Sums the current “total” with the new number to get the new total
+    total = total + float_value
+
+#Prints final "total" (sum) and "number" (of counts)
+#Calculates and prints the average by dividing the total by counts
+print ("Total: ", total, "Counts: ", number, "Average: ", total/number)
